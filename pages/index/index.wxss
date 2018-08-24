@@ -1,0 +1,221 @@
+/**index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 5%;
+} 
+
+/* 授权模态框 */
+.mask {
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(51, 51, 51, .7);
+}
+
+.model-container {
+    width: 90%;
+    height: 200rpx;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100rpx;
+    margin-left: -45%;
+    border-radius: 30rpx;
+}
+
+.model {
+    width: 90%;
+    height: 100rpx;
+    margin: 50rpx 5%;
+    text-align: center;
+    line-height: 100rpx;
+    background: #f42a2a;
+    border-radius: 10rpx;
+    color: #fff;
+}
+
+/* 用户 */
+.user-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+/* 用户信息 */
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25rpx;
+}
+
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 10rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+}
+
+/* 用户等级 金币 */
+.user-acount {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+}
+
+.grade {
+    width: 120rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border: 1px solid #93c5e5;
+    color: #93c5e5;
+    border-radius: 30rpx;
+    font-size: 25rpx;
+}
+
+.gold-coin {
+    margin-left: 20rpx;
+    line-height: 40rpx;
+}
+
+.gold-coin image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.gold-coin text {
+    color: #f4ea2a;
+}
+
+/* 轮播 */
+swiper {
+    width: 100%;
+    margin: 20rpx 0;
+}
+
+swiper-item {
+    border-radius: 20rpx;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* 游戏列表 */
+
+/* 标题 */
+.title {
+    font-weight: bold;
+    letter-spacing: 5rpx;
+    font-size: 40rpx;
+    padding: 20rpx 0;
+}
+
+/* 游戏列表 */
+.game-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30rpx;
+}
+
+/* 游戏图标 */
+.game-icon {
+    width: 150rpx;
+    height: 150rpx;
+    border: 1px solid #eee;
+    border-radius: 20rpx;
+    margin-right: 30rpx;
+}
+
+/* 游戏简介 */
+.game-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    width: 354rpx;
+}
+
+.game-info text {
+    display: block;
+}
+
+.game-name {
+    font-size: 36rpx;
+    margin-bottom: 15rpx;
+}
+
+.game-desc {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;  
+    font-size: 25rpx;  
+    margin-bottom: 10rpx;
+}
+
+.game-member {
+    font-size: 20rpx;
+    color: red;
+}
+
+.open-btn {
+    width: 120rpx;
+    height: 50rpx;
+    border-radius: 25rpx;
+    background: #93c5e5;
+    color: #fff;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 32rpx;
+    margin-left: 20rpx;
+}
+
+
+/* 视频 */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30rpx 0;
+    border-bottom: 1px solid rgb(129, 35, 35);
+}
+
+.video-container text {
+    color: red;
+    padding-bottom: 20rpx;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+}
+
+.controls {
+    width: 100%;
+    height: 100%;
+}

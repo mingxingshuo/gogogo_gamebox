@@ -1,0 +1,55 @@
+<view class='container' wx:if="{{!isShow}}">
+    <!-- 授权模态框 -->
+    <view class='mask' wx:if="{{!hasUserInfo && canIUse && getUserInfoFail}}">
+        <view class='model-container'>
+            <button class='model' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击进入盒子 </button>
+        </view>
+    </view>
+    <!-- 用户 -->
+    <view class='user-wrapper'>
+        <view class='user-info'>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}},欢迎回来</text>
+        </view>
+        <view class='user-acount'>
+            <view class='grade'>等级1</view>
+            <view class='gold-coin'>
+                <image src='/images/icons/gold_coin.png'></image>
+                <text>0</text>
+            </view>
+        </view>
+    </view>
+    <!-- 轮播 -->
+    <swiper indicator-dots='true' indicator-active-color='#fff' autoplay>
+        <navigator wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" app-id='{{item.appid}}' extra-data='{{item.extra}}'>
+            <swiper-item>
+                <image class='banner-image' src="{{item.img}}"></image>
+            </swiper-item>
+        </navigator>
+    </swiper>
+    <!-- 游戏列表 -->
+    <text class='title'>推荐游戏</text>
+    <view class='game-list'>
+        <view class='game-item' wx:for="{{gameList}}" wx:for-item="item" wx:key="item">
+            <image class='game-icon' src="{{item.img}}"></image>
+            <view class='game-info-container'>
+                <view class='game-info'>
+                    <text class='game-name'>{{item.appname}}</text>
+                    <text class='game-desc'>{{item.intro}}</text>
+                    <text class='game-member'>{{item.play_numbers}}</text>
+                </view>
+                <navigator target="miniProgram" app-id='{{item.appid}}' class='open-btn'>打开</navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='container' wx:if="{{isShow}}">
+    <view class='video-container' wx:for="{{videoList}}" wx:for-item="item" wx:key="item">
+        <text>{{item.title}}</text>
+        <video initial-time="8" src='{{item.link}}' controls>
+            <!-- <cover-view class="controls">
+                <cover-image class="img" src="{{item.img}}" />
+            </cover-view> -->
+        </video>
+    </view>
+</view>
