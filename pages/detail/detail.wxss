@@ -1,0 +1,11 @@
+/* pages/detail.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+image {
+    width: 100%;
+    margin-bottom: 10rpx;
+    height: 600rpx;
+}

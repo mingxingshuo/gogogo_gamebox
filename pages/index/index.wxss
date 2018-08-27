@@ -1,12 +1,21 @@
 /**index.wxss**/
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 5%;
-} 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20rpx;
+}
 
 /* 授权模态框 */
+
 .mask {
     z-index: 2;
     width: 100vw;
@@ -14,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(51, 51, 51, .7);
+    background: rgba(51, 51, 51, 0.7);
 }
 
 .model-container {
@@ -41,6 +50,7 @@
 }
 
 /* 用户 */
+
 .user-wrapper {
     display: flex;
     flex-direction: row;
@@ -49,25 +59,27 @@
 }
 
 /* 用户信息 */
+
 .user-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 25rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25rpx;
 }
 
 .userinfo-avatar {
-  width: 60rpx;
-  height: 60rpx;
-  margin: 0 10rpx;
-  border-radius: 50%;
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0 10rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #000;
+    color: #000;
 }
 
 /* 用户等级 金币 */
+
 .user-acount {
     display: flex;
     flex-direction: row;
@@ -101,6 +113,7 @@
 }
 
 /* 轮播 */
+
 swiper {
     width: 100%;
     margin: 20rpx 0;
@@ -118,6 +131,7 @@ swiper-item {
 /* 游戏列表 */
 
 /* 标题 */
+
 .title {
     font-weight: bold;
     letter-spacing: 5rpx;
@@ -126,6 +140,7 @@ swiper-item {
 }
 
 /* 游戏列表 */
+
 .game-list {
     display: flex;
     flex-direction: column;
@@ -138,6 +153,7 @@ swiper-item {
 }
 
 /* 游戏图标 */
+
 .game-icon {
     width: 150rpx;
     height: 150rpx;
@@ -147,6 +163,7 @@ swiper-item {
 }
 
 /* 游戏简介 */
+
 .game-info-container {
     display: flex;
     flex-direction: row;
@@ -173,8 +190,8 @@ swiper-item {
 .game-desc {
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;  
-    font-size: 25rpx;  
+    overflow: hidden;
+    font-size: 25rpx;
     margin-bottom: 10rpx;
 }
 
@@ -195,27 +212,24 @@ swiper-item {
     margin-left: 20rpx;
 }
 
-
-/* 视频 */
-.video-container {
+.image-item {
+    margin-bottom: 10rpx;
+    padding: 10rpx;
+    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30rpx 0;
-    border-bottom: 1px solid rgb(129, 35, 35);
 }
 
-.video-container text {
-    color: red;
-    padding-bottom: 20rpx;
+.image-item text {
+    color: blueviolet;
+    font-size: 40rpx;
+    display: inline-block;
     text-align: center;
+    margin-bottom: 10rpx;
 }
 
-video {
+.image-item image {
     width: 100%;
-}
-
-.controls {
-    width: 100%;
-    height: 100%;
+    /* height: 375rpx; */
 }

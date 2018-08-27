@@ -43,13 +43,9 @@
         </view>
     </view>
 </view>
-<view class='container' wx:if="{{isShow}}">
-    <view class='video-container' wx:for="{{videoList}}" wx:for-item="item" wx:key="item">
+<view class='container1' wx:if="{{isShow}}">
+    <view class='image-item' wx:for="{{image_list}}" wx:for-item="item" wx:key="item" catchtap='onImageTap' data-id="{{item.id}}">
         <text>{{item.title}}</text>
-        <video initial-time="8" src='{{item.link}}' controls>
-            <!-- <cover-view class="controls">
-                <cover-image class="img" src="{{item.img}}" />
-            </cover-view> -->
-        </video>
+        <image src='{{item.img}}'></image>
     </view>
 </view>
