@@ -15,11 +15,11 @@ Page({
         pageTitle: '',
         image_list: []
     },
-    onShow: function () {
+    onShow: function() {
         this.login();
         this.getData()
     },
-    onLoad: function () {
+    onLoad: function() {
         this.checkLogin()
         this.setData({
             image_list: dataList.dataList
@@ -88,7 +88,7 @@ Page({
             })
         }
     },
-    getUserInfo: function (e) {
+    getUserInfo: function(e) {
         if (e.detail.userInfo) {
             app.globalData.userInfo = e.detail.userInfo
             this.setData({
@@ -99,22 +99,21 @@ Page({
             this.openSetting();
         }
     },
-    login: function () {
+    login: function() {
         var that = this
         wx.login({
-            success: function (res) {
+            success: function(res) {
                 var code = res.code;
                 wx.getUserInfo({
-                    success: function (res) {
+                    success: function(res) {
                         app.globalData.userInfo = res.userInfo
                         that.setData({
                             getUserInfoFail: false,
                             userInfo: res.userInfo,
                             hasUserInfo: true
-
                         })
                     },
-                    fail: function (res) {
+                    fail: function(res) {
                         that.setData({
                             getUserInfoFail: true
                         })
@@ -123,11 +122,11 @@ Page({
             }
         })
     },
-    openSetting: function () {
+    openSetting: function() {
         var that = this
         if (wx.openSetting) {
             wx.openSetting({
-                success: function (res) {
+                success: function(res) {
                     //尝试再次登录
                     that.login()
                 }

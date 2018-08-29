@@ -21,7 +21,7 @@
     </view>
     <!-- 轮播 -->
     <swiper indicator-dots='true' indicator-active-color='#fff' autoplay>
-        <navigator wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" app-id='{{item.appid}}' extra-data='{{item.extra}}'>
+        <navigator wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" app-id='{{item.appid}}' extra-data='{{item.extra}}' path="{{item.path}}">
             <swiper-item>
                 <image class='banner-image' src="{{item.img}}"></image>
             </swiper-item>
@@ -38,7 +38,7 @@
                     <text class='game-desc'>{{item.intro}}</text>
                     <text class='game-member'>{{item.play_numbers}}</text>
                 </view>
-                <navigator target="miniProgram" app-id='{{item.appid}}' class='open-btn'>打开</navigator>
+                <navigator target="miniProgram" app-id='{{item.appid}}' class='open-btn' path="{{item.path}}">打开</navigator>
             </view>
         </view>
     </view>
