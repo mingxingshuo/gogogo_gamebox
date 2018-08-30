@@ -14,41 +14,6 @@
     padding: 0 20rpx;
 }
 
-/* 授权模态框 */
-
-.mask {
-    z-index: 2;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(51, 51, 51, 0.7);
-}
-
-.model-container {
-    width: 90%;
-    height: 200rpx;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -100rpx;
-    margin-left: -45%;
-    border-radius: 30rpx;
-}
-
-.model {
-    width: 90%;
-    height: 100rpx;
-    margin: 50rpx 5%;
-    text-align: center;
-    line-height: 100rpx;
-    background: #f42a2a;
-    border-radius: 10rpx;
-    color: #fff;
-}
-
 /* 用户 */
 
 .user-wrapper {
@@ -121,11 +86,25 @@ swiper {
 
 swiper-item {
     border-radius: 20rpx;
+    position: relative;
+    height: 100%;
 }
 
 .banner-image {
     width: 100%;
-    height: 100%;
+}
+
+swiper-item text {
+    display: inline-block;
+    width: 100%;
+    background: rgba(51, 51, 51, .7);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    padding-right: 20rpx;
+    box-sizing: border-box;
 }
 
 /* 游戏列表 */
@@ -193,11 +172,12 @@ swiper-item {
     overflow: hidden;
     font-size: 25rpx;
     margin-bottom: 10rpx;
+    color: #666;
 }
 
 .game-member {
     font-size: 20rpx;
-    color: red;
+    color: #666;
 }
 
 .open-btn {

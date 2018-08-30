@@ -1,15 +1,9 @@
 <view class='container' wx:if="{{!isShow}}">
-    <!-- 授权模态框 -->
-    <view class='mask' wx:if="{{!hasUserInfo && canIUse && getUserInfoFail}}">
-        <view class='model-container'>
-            <button class='model' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击进入盒子 </button>
-        </view>
-    </view>
     <!-- 用户 -->
     <view class='user-wrapper'>
         <view class='user-info'>
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}},欢迎回来</text>
+            <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+            <open-data class="userinfo-nickname" type="userNickName"></open-data>，欢迎回来
         </view>
         <view class='user-acount'>
             <view class='grade'>等级1</view>
@@ -24,6 +18,7 @@
         <navigator wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" app-id='{{item.appid}}' extra-data='{{item.extra}}' path="{{item.path}}">
             <swiper-item>
                 <image class='banner-image' src="{{item.img}}"></image>
+                <text>{{item.appname}}</text>
             </swiper-item>
         </navigator>
     </swiper>
@@ -31,15 +26,17 @@
     <text class='title'>推荐游戏</text>
     <view class='game-list'>
         <view class='game-item' wx:for="{{gameList}}" wx:for-item="item" wx:key="item">
-            <image class='game-icon' src="{{item.img}}"></image>
-            <view class='game-info-container'>
-                <view class='game-info'>
-                    <text class='game-name'>{{item.appname}}</text>
-                    <text class='game-desc'>{{item.intro}}</text>
-                    <text class='game-member'>{{item.play_numbers}}</text>
+            <navigator class='game-item' target="miniProgram" app-id='{{item.appid}}' path="{{item.path}}">
+                <image class='game-icon' src="{{item.img}}"></image>
+                <view class='game-info-container'>
+                    <view class='game-info'>
+                        <text class='game-name'>{{item.appname}}</text>
+                        <text class='game-desc'>{{item.intro}}</text>
+                        <text class='game-member'>{{item.play_numbers}}人在玩</text>
+                    </view>
+                    <text class='open-btn'>启动</text>    
                 </view>
-                <navigator target="miniProgram" app-id='{{item.appid}}' class='open-btn' path="{{item.path}}">打开</navigator>
-            </view>
+            </navigator>
         </view>
     </view>
 </view>
