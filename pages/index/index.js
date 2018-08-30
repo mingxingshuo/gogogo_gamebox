@@ -1,11 +1,12 @@
 const dataList = require('../../data/data.js')
+var app = getApp();
 
 Page({
     data: {
         banner_images: [],
         gameList: [],
         isShow: false,
-        version: '1.0',
+        version: '1.0.2',
         pageTitle: '',
         image_list: [],
         text: ''
@@ -87,5 +88,17 @@ Page({
             path: '/pages/index/index',
             imageUrl: 'http://pe7v540xz.bkt.clouddn.com/youxihezi-fenxiangtu'
         }
+    },
+    onNavTap: function(e){
+      var data = e.currentTarget.dataset;
+      app.aldstat.sendEvent('点击_'+data.pos+'_' + data.appId);
+      console.log(data)
+      wx.navigateToMiniProgram({
+        appId: data.appId,
+        path: data.path,
+        extraData: data.extraData,
+        success(res) {
+        }
+      })
     }
 })
