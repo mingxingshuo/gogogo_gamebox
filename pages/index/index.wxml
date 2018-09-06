@@ -15,7 +15,7 @@
     </view>
     <!-- 轮播 -->
     <swiper indicator-dots='true' indicator-active-color='#fff' autoplay>
-        <view wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" data-app-id='{{item.appid}}' data-extra-data='{{item.extra}}' data-path="{{item.path}}" data-pos="banner" catchtap='onNavTap'>
+        <view wx:for="{{banner_images}}" wx:for-item="item" wx:key="item" target="miniProgram" data-app-id='{{item.appid}}' data-extra-data='{{item.extra}}' data-path="{{item.path}}" data-pos="走马灯" data-app-name="{{item.appname}}" catchtap='onNavTap'>
             <swiper-item>
                 <image class='banner-image' src="{{item.img}}"></image>
             </swiper-item>
@@ -25,7 +25,7 @@
     <text class='title'>推荐游戏</text>
     <view class='game-list'>
         <view class='game-item' wx:for="{{gameList}}" wx:for-item="item" wx:key="item">
-            <view class='game-item' target="miniProgram" data-app-id='{{item.appid}}' data-path="{{item.path}}" data-extra-data="{{item.extra}}" data-pos="common" catchtap='onNavTap'>
+            <view class='game-item' target="miniProgram" data-app-id='{{item.appid}}' data-path="{{item.path}}" data-extra-data="{{item.extra}}" data-pos="列表" data-app-name="{{item.appname}}" catchtap='onNavTap'>
                 <image class='game-icon' src="{{item.img}}"></image>
                 <view class='game-info-container'>
                     <view class='game-info'>

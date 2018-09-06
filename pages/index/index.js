@@ -6,7 +6,7 @@ Page({
         banner_images: [],
         gameList: [],
         isShow: false,
-        version: '1.0.2',
+        version: '1.0.3',
         pageTitle: '',
         image_list: [],
         text: ''
@@ -17,7 +17,7 @@ Page({
         })
         this.getData()
     },
-    
+
     requestData(url, method, cb) {
         wx.request({
             url: url,
@@ -53,13 +53,13 @@ Page({
             this.clipboar()
         })
     },
-    clipboar: function () {
+    clipboar: function() {
         if (this.data.text != '' && this.data.text != null) {
             wx.setClipboardData({
                 data: this.data.text,
-                success: function (res) {
+                success: function(res) {
                     wx.getClipboardData({
-                        success: function (res) {
+                        success: function(res) {
                             wx.showToast({
                                 title: '正在进入...',
                                 duration: 1000,
@@ -89,16 +89,15 @@ Page({
             imageUrl: 'http://pe7v540xz.bkt.clouddn.com/youxihezi-fenxiangtu'
         }
     },
-    onNavTap: function(e){
-      var data = e.currentTarget.dataset;
-      app.aldstat.sendEvent('点击_'+data.pos+'_' + data.appId);
-      console.log(data)
-      wx.navigateToMiniProgram({
-        appId: data.appId,
-        path: data.path,
-        extraData: data.extraData,
-        success(res) {
-        }
-      })
+    onNavTap: function(e) {
+        var data = e.currentTarget.dataset;
+        app.aldstat.sendEvent('点击_' + data.pos + '_' + data.appName + '_' + data.appId);
+        console.log(data)
+        wx.navigateToMiniProgram({
+            appId: data.appId,
+            path: data.path,
+            extraData: data.extraData,
+            success(res) {}
+        })
     }
 })
